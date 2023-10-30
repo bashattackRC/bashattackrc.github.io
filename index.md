@@ -1,3 +1,6 @@
+---
+layout: indexsite
+---
 # Oh My Bash!
 {: style="text-align: center;"}
 functions, aliases, plugins, and themes to spice up your terminal 😎
