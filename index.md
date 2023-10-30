@@ -1,4 +1,1 @@
-if [ -z "$GIT_BRANCH" ]; then
-  export PS1="\e[0;37m\e[44m \u@\h \e[0;34m\e[43m\e[0;37m\e[43m \W \e[0;33m\e[0m "
-else
-  export PS1="\e[0;37m\e[44m \u@\h \e[0;34m\e[43m\e[0;37m\e[43m \W  $GIT_BRANCH \e[0;33m\e[0m "
+
