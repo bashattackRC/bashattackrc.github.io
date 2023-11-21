@@ -1,5 +1,26 @@
 <link href="https://bootswatch.com/5/materia/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+<script>
+const delay = ms => new Promise(res => setTimeout(res, ms));
+
+function installOmbCopy() {
+  // Get the text field
+  var copyText = document.getElementById("install-omb");
+
+  // Select the text field
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); // For mobile devices
+
+  // Copy the text inside the text field
+  navigator.clipboard.writeText(copyText.value);
+  
+  // Alert the copied text
+  document.getElementById("omb-copy").innerHTML = 'Copied!';
+  await delay(1500);
+  document.getElementById("omb-copy").innerHTML = 'Copy';
+}
+</script>
+
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
         <a class="navbar-brand" href="/">Oh My Bash</a>
@@ -41,8 +62,8 @@
             a collection of scripts to make Bash feel like home.
         </div>
         <div class="input-group mb-3">
-          <input type="text" class="form-control" value='exec bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybashrc/ohmybash/main/install.sh)"' readonly style="font-family: monospace">
-          <button class="btn btn-primary" type="button" id="omb-copy">Copy</button>
+          <input type="text" class="form-control" id="install-omb" value='exec bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybashrc/ohmybash/main/install.sh)"' readonly style="font-family: monospace">
+          <button class="btn btn-primary" type="button" id="omb-copy" onclick="installOmbCopy()">Copy</button>
         </div>
       </div>
     </div>
